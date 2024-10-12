@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page" id="page2">
+        <img src="dekorasi.png" alt="Dekorasi" class="dekorasi">
+        <h1 class="hbd">HBD</h1>
+        <h2>HAPPY BIRTHDAY</h2>
+        <img src="orang.png" alt="Orang" class="orang">
+        <h3>HANIF ^_^</h3>
+        <p>SEMOGA PANJANG UMUR DAN SEHAT SELALU ANGGAP AJA MINECRAFT ITU HADIAH NYA :v ~KAKAK.</p>
+        <img src="balon.png" alt="Balon" class="balon-bawah" id="balon">
+        <a href="https://wa.me/qr/6OXBRAT2KVHAN1" class="link">WA Kakak (⁠≧⁠▽⁠≦⁠)</a>
+
+        <!-- Audio -->
+        <audio id="audio" loop>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Tombol untuk memulai audio jika autoplay tidak bekerja -->
+        <button id="playAudio" class="play-btn">Putar Musik</button>
+   
+ </div>
+ 
+    <script>
+        // Animasi balon ke atas satu kali saat halaman dimuat
+        window.onload = function() {
+            const balon = document.getElementById('balon');
+            balon.classList.add('float');
+            
+            // Menghilangkan balon setelah animasi selesai
+            balon.addEventListener('animationend', () => {
+                balon.style.display = 'none'; // Menghilangkan balon setelah animasi
+            });
+
+            // Mulai audio setelah interaksi jika autoplay tidak didukung
+            const audio = document.getElementById('audio');
+            const playButton = document.getElementById('playAudio');
+
+            playButton.addEventListener('click', () => {
+                audio.play(); // Memulai audio
+                playButton.style.display = 'none'; // Menghilangkan tombol setelah diputar
+            });
+        }
+    </script>
+</body>
+</html>

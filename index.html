@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page" id="page1">
+        <img src="kotak.png" alt="Kotak" id="kotak" onclick="goToPage2()">
+    </div>
+
+    <script>
+        function goToPage2() {
+            const kotak = document.getElementById('kotak');
+            kotak.classList.toggle('clicked');
+            // Pindah ke halaman 2 setelah animasi selesai
+            setTimeout(() => {
+                window.location.href = 'page2.html';
+            }, 500); // Durasi yang sama dengan animasi
+        }
+    </script>
+</body>
+</html>
